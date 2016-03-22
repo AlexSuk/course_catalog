@@ -2,7 +2,7 @@
 
 <h1>Listing Subjects</h1>
 
-<table>
+<table class = "table">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,9 +18,9 @@
         <td><%= subject.name %></td>
         <td><%= subject.sub_id %></td>
         <td><%= subject.abbreviations %></td>
-        <td><%= link_to 'Show', subject %></td>
+        <!-- td><%= link_to 'Show', subject %></td>
         <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>

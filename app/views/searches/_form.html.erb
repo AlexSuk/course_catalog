@@ -1,0 +1,25 @@
+<%= form_for(@search, html: {class: "purse-form"}, :method => 'get') do |f| %>
+  <% if @search.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search.errors.count, "error") %> prohibited this search from being saved:</h2>
+
+      <ul>
+      <% @search.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject_name %>
+  </div>
+  <div class="field">
+    <%= f.label :course %><br>
+    <%= f.text_field :course_name %>
+  </div>
+
+  <div class="actions"><%= f.submit "Search", class: "pure-button pure-button-primary"%>
+  </div>
+<% end %>

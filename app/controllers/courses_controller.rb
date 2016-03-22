@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
+    # @subjects = Subject.all
     @courses = Course.all
   end
 

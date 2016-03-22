@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Searches</h1>
+
+<%= form_tag searches_path, :method => 'get' do %>
+  <p>
+    <%= select_tag :subject, options_for_select(@subject_names), :include_blank => true  %>
+    <%= label_tag(:q, "Course") %>
+    <%= text_field_tag (:q) %>
+
+    <%= submit_tag "Search" %>
+  </p>
+<%end%>
+
+<% if @searches.present? %>
+  <% @searches.each do |course| %>
+    <ul><%=course.name%>
+    <%= link_to 'Enroll', new_enrollment_path(:course_var => course.id), :class => "button"%></ul>
+
+  <%end%>
+<% else %>
+  <p>There are no searches containing the term(s) <%= params[:subject] %>, <%= params[:q] %>.</p>
+<% end %>

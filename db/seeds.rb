@@ -20,6 +20,8 @@ all_instructions = JSON.parse(instruct_file)
 all_subjects = JSON.parse(subject_file)
 
 all_courses.each do |course|
+	
+
 	Course.create(name: course["name"], code: course["code"], description: course["description"], requirement: course["requirements"], subject: course["subjects"])
 end
 

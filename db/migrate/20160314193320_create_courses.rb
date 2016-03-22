@@ -5,7 +5,7 @@ class CreateCourses < ActiveRecord::Migration
       t.string :code
       t.text :description
       t.text :requirement
-      t.text :subject
+      t.string :subject
 
       t.timestamps null: false
     end
