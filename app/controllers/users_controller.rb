@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @current_u = User.find_by(session[:user_id])
+    @current_u = User.find_by(id: session[:user_id])
 
   end  
 
