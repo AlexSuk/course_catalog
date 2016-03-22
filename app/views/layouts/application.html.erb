@@ -22,7 +22,7 @@
 					<% if session[:user_id].nil? %>
                     	 <li><%= link_to 'Home', login_path %></li>
           			<% else %>
-            			<li><%= link_to 'Home', user_path(session[:user_id]) %></li>
+            			<li><%= link_to 'Home', user_path(id: session[:user_id]) %></li>
           			<% end %>
 					<li><%= link_to 'Courses', courses_url %></li>
 					<li><%= link_to 'Instructors', instructors_url %></li>
