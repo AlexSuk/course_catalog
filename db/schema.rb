@@ -24,14 +24,14 @@ ActiveRecord::Schema.define(version: 20160321071603) do
   end
 
   create_table "enrollments", force: :cascade do |t|
-    t.integer  "users_id"
-    t.integer  "courses_id"
+    t.integer  "user_id"
+    t.integer  "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "enrollments", ["courses_id"], name: "index_enrollments_on_courses_id"
-  add_index "enrollments", ["users_id"], name: "index_enrollments_on_users_id"
+  add_index "enrollments", ["course_id"], name: "index_enrollments_on_course_id"
+  add_index "enrollments", ["user_id"], name: "index_enrollments_on_user_id"
 
   create_table "instructors", force: :cascade do |t|
     t.string   "middle"

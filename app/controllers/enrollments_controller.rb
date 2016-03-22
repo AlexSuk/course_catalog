@@ -17,7 +17,7 @@ class EnrollmentsController < ApplicationController
     # @enrollment = Enrollment.new
     @user = User.find_by(session[:user_id])
     # @enrollment = Enrollment.new(:courses_id => params[:course_var], :users_id => @user.id)
-    Enrollment.create(:courses_id => params[:course_var], :users_id => @user.id)
+    Enrollment.create(:course_id => params[:course_var], :user_id => @user.id)
 
   end
 
@@ -75,6 +75,6 @@ class EnrollmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def enrollment_params
-      params.require(:enrollment).permit(:users_id, :courses_id)
+      params.require(:enrollment).permit(:user_id, :course_id)
     end
 end
