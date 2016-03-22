@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
 
 
   def display_enrollments
-    curr_user_id = self.id.to_s
-  	enrollments = Enrollment.where("user_id LIKE ?", "%#{curr_user_id}%")
+    curr_user_id = self.id
+  	enrollments = Enrollment.where("user_id LIKE ?", "%#{curr_user_id}")
   	enrollment_names = Array.new
   	enrollments.each do |x|
   		course = Course.find_by(id: x.course_id)
