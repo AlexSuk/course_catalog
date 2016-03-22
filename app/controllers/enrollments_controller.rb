@@ -15,7 +15,7 @@ class EnrollmentsController < ApplicationController
   # GET /enrollments/new
   def new
     # @enrollment = Enrollment.new
-    @user = User.find_by(session[:user_id])
+    @user = User.find_by(id: session[:user_id])
     # @enrollment = Enrollment.new(:courses_id => params[:course_var], :users_id => @user.id)
     Enrollment.create(:course_id => params[:course_var], :user_id => @user.id)
 
