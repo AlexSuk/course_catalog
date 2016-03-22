@@ -3,12 +3,12 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @user.name %>
+  <%= @current_u.name %>
 </p>
 <p>
   <strong>Courses enrolled in:</strong>
 </p>
-<% @user.display_enrollments.each do |each_enrollment| %>
+<% @current_u.display_enrollments.each do |each_enrollment| %>
   <p><%= each_enrollment%></p>
 
 <%end%>
