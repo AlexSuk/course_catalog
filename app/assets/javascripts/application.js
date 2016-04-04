@@ -22,10 +22,10 @@ $(function() {
  //  	});
 	
 
-	$(document).on('submit', '#course_search', function() {
-		$.get($("#course_search").attr("action"), $("#course_search").serialize(),null,"script");
-		return false;
-	});
+	// $(document).on('submit', '#course_search', function() {
+	// 	$.get($("#course_search").attr("action"), $("#course_search").serialize(),null,"script");
+	// 	return false;
+	// });
 	$("#course_search input").keyup(function() {
 		$.get($("#course_search").attr("action"), $("#course_search").serialize(),null,"script");
 		return false;
