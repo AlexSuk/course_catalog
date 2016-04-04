@@ -14,3 +14,39 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+	// $("#course_search").submit(function() {
+ //    	$.getScript(this.href);
+ //    	return false;
+ //  	});
+	
+
+	$(document).on('submit', '#course_search', function() {
+		$.get($("#course_search").attr("action"), $("#course_search").serialize(),null,"script");
+		return false;
+	});
+	$("#course_search input").keyup(function() {
+		$.get($("#course_search").attr("action"), $("#course_search").serialize(),null,"script");
+		return false;
+	});
+
+
+	// $("#course_search").submit(function() {
+	// 	$.get(this.action, $(this).serialize(),null,"script");
+	// 	return false;
+	// // });
+	// $("#course_search input").keyup(function() {
+	// 	$.get($("#course_search").attr("action"), $("#course_search").serialize(),null,"script");
+	// 	return false;
+	// });
+	// $('input').focus(function() {
+	// 	$(this).attr('originalvalue', $(this).val());
+	// });
+	// $('input').on('keyup' function() {
+	// 	if($this).val()===$(this).attra('originalvalue')) return;
+	// 	alert('something went wrong')
+	// });
+
+});
+

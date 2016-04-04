@@ -1,0 +1,15 @@
+<h3>Search Results</h3>
+
+<%if @searches.nil? || @searches.length == 0%>
+	<p>No Matches Found</p>
+<% else %>
+	<p><%= @searches.length %> matches found</p>
+	<%= render "form" %>
+<% end %>
+
+
+
+
+
+
+

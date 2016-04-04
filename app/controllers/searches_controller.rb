@@ -10,7 +10,12 @@ class SearchesController < ApplicationController
       id_name = x.sub_id + " " + x.name
       @subject_names.push(id_name)
     end
-    @searches = Course.search(params[:subject], params[:q])
+    @searches = Search.search(params[:subject], params[:q])
+
+    # respond_to do |format|
+    #   format.js
+    # end
+
   end
 
   # GET /searches/1
