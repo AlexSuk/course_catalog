@@ -9,13 +9,14 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-$(function() {
+$(document).ready(function() {
 	// $("#course_search").submit(function() {
  //    	$.getScript(this.href);
  //    	return false;
@@ -26,10 +27,16 @@ $(function() {
 	// 	$.get($("#course_search").attr("action"), $("#course_search").serialize(),null,"script");
 	// 	return false;
 	// });
+
 	$("#course_search input").keyup(function() {
 		$.get($("#course_search").attr("action"), $("#course_search").serialize(),null,"script");
 		return false;
 	});
+
+	// $("#course_search input").keyup(function() {
+	// 	$.get(this.action, $(this).serialize(),null,"script");
+	// 	return false;
+	// });
 
 
 	// $("#course_search").submit(function() {
